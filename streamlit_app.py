@@ -51,7 +51,7 @@ if st.button("Generate Response"):
         with st.spinner("Generating response..."):
             try:
                 match model:
-                    case 'o1':
+                    case 'o1-preview':
                         # Use ChatCompletion for chat-based models
                         response = client.chat.completions.create(
                             model=model,
