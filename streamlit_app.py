@@ -50,21 +50,37 @@ if st.button("Generate Response"):
     else:
         with st.spinner("Generating response..."):
             try:
-                # Use ChatCompletion for chat-based models
-                response = client.chat.completions.create(
-                    model=model,
-                    messages=[
-                        {"role": "user", "content": prompt},
-                    ],
-                    temperature=temperature,
-                    max_tokens=max_tokens,
-                )
+                match model:
+                    case 'o1':
+                        # Use ChatCompletion for chat-based models
+                        response = client.chat.completions.create(
+                            model=model,
+                            messages=[
+                                {"role": "user", "content": prompt},
+                            ]
+                        )
 
-                generated_text = response.choices[0].message.content.strip()
+                        generated_text = response.choices[0].message.content.strip()
 
-                # Display the response
-                st.success("Generated Response:")
-                st.write(generated_text)
+                        # Display the response
+                        st.success("Generated Response:")
+                        st.write(generated_text)
+                    case _:
+                        # Use ChatCompletion for chat-based models
+                        response = client.chat.completions.create(
+                            model=model,
+                            messages=[
+                                {"role": "user", "content": prompt},
+                            ],
+                            temperature=temperature,
+                            max_tokens=max_tokens,
+                        )
+
+                        generated_text = response.choices[0].message.content.strip()
+
+                        # Display the response
+                        st.success("Generated Response:")
+                        st.write(generated_text)
 
             except Exception as e:
                 st.error(f"An error occurred: {e}")
