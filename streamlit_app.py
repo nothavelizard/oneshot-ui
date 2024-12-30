@@ -31,7 +31,7 @@ with st.sidebar:
     )
     max_tokens = st.slider(
         "Max Tokens",
-        min_value=50,
+        min_value=0.0,
         max_value=16383.0,
         value=16383.0,
         help="Maximum number of tokens to generate.",
