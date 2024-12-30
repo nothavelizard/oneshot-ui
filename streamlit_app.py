@@ -25,7 +25,7 @@ with st.sidebar:
         "Temperature",
         min_value=0.0,
         max_value=1.0,
-        value=0.7,
+        value=1,
         help="Controls the randomness of the output.",
         disabled='o1' in model
     )
@@ -33,7 +33,7 @@ with st.sidebar:
         "Max Tokens",
         min_value=50,
         max_value=16383,
-        value=150,
+        value=16383,
         help="Maximum number of tokens to generate.",
         disabled='o1' in model
     )
