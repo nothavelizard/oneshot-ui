@@ -25,7 +25,7 @@ with st.sidebar:
         "Temperature",
         min_value=0.0,
         max_value=1.0,
-        value=1,
+        value=1.0,
         help="Controls the randomness of the output.",
         disabled='o1' in model
     )
