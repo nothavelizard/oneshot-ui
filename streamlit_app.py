@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Load your OpenAI API key
-openai_api_key = st.secrets["openai"]["api_key"]
+openai_api_key = st.secrets.OPENAI_API_KEY
 client = OpenAI(api_key=openai_api_key)
 models_available = client.models.list()
 model_names = [model.id for model in models_available.data]
