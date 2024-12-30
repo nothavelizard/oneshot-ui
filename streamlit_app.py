@@ -27,7 +27,7 @@ with st.sidebar:
         max_value=1.0,
         value=0.7,
         help="Controls the randomness of the output.",
-        disabled=not (model=='o1-preview')
+        disabled='o1' in model
     )
     max_tokens = st.slider(
         "Max Tokens",
@@ -35,7 +35,7 @@ with st.sidebar:
         max_value=1000,
         value=150,
         help="Maximum number of tokens to generate.",
-        disabled=not (model=='o1-preview')
+        disabled='o1' in model
     )
 
 # Text input for user prompt
